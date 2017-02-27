@@ -1,0 +1,12 @@
+.carousel ul
+{
+    list-style-type: none;
+    display:flex;
+    flex-direction: row;
+    height:200px;
+}
+.carousel li
+{
+    border:1px solid black;
+    flex-grow:1;
+}
