@@ -1,13 +1,14 @@
+<!doctype html>
 <html>
-
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations-next-lite.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="carousel" id=carousel>
+    <div id="carousel">
         <ul>
-            <li class="current" data-index=1>1</li>
+            <li data-index=1>1</li>
             <li data-index=2>2</li>
             <li data-index=3>3</li>
             <li data-index=4>4</li>
@@ -15,23 +16,17 @@
         </ul>
     </div>
     <script>
-        var carousel = document.getElementById('carousel');
-        carousel.addEventListener('click', function (ev) {
-            var current = document.getElementsByClassName('current')[0];
-            current.classList.remove('current');
-            if (current.nextElementSibling) 
-                current.nextElementSibling.classList.add('current');
-            else {
-                var lis = current.parentElement.children;
-                var lis0 = lis[0];
-                lis0.parentElement.appendChild(lis0);
-                setTimeout(function () {
-                    lis0.classList.add('current');
-                }, 10)
-
-            }
+        carousel.addEventListener('click', function() {
+            var ul=document.querySelector('#carousel ul');
+            ul.animate([{ left: '0px' }, { left: '-200px' }],
+                {
+                    duration: 1000,
+                    easing: 'ease',
+                    fill: 'forwards'
+                })
+            var lis = document.querySelectorAll('#carousel ul li')
+            lis[0].parentElement.appendChild(lis[0]);
         })
-
     </script>
 </body>
 

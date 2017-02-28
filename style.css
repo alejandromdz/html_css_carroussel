@@ -1,33 +1,34 @@
 
-.carousel
+#carousel
 {
-    display:flex;
-    align-items: center;
-    justify-content:center;
-     overflow: hidden;
+    height:200px;
+    width:200px;
+    overflow: hidden;
+    position:relative;
+    margin:auto;
 }
-.carousel ul
+#carousel ul
 {
     list-style-type: none;
     display:flex;
     flex-direction: row;
-    height:200px;
-    width:200px;
+    padding:0px;
+    margin:0px;
+    position: absolute; 
+    left:-200px
+   
+   
 }
-.carousel li
+#carousel li
 {
+    display:flex;
     overflow: hidden;
     align-items: center;
     justify-content:center;
-    display:flex;
-    width: 100%;
-    height: 100%;
-    flex:0;
-    transition: flex 2s linear;
+    width:200px;
+    height: 200px;
 }
-li.current{
-    flex:1;
-}
+
 li[data-index="1"]{
     background-color: #ff66ff;
 }
