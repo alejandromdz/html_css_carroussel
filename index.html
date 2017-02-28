@@ -16,17 +16,13 @@
         </ul>
     </div>
     <script>
-        carousel.addEventListener('click', function() {
+        setInterval( function() {
             var ul=document.querySelector('#carousel ul');
             ul.animate([{ left: '0px' }, { left: '-200px' }],
-                {
-                    duration: 1000,
-                    easing: 'ease',
-                    fill: 'forwards'
-                })
+                {duration: 1000,easing: 'ease',fill: 'forwards'})
             var lis = document.querySelectorAll('#carousel ul li')
             lis[0].parentElement.appendChild(lis[0]);
-        })
+        },5000);
     </script>
 </body>
 
