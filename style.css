@@ -1,12 +1,45 @@
+
+.carousel
+{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+     overflow: hidden;
+}
 .carousel ul
 {
     list-style-type: none;
     display:flex;
     flex-direction: row;
     height:200px;
+    width:200px;
 }
 .carousel li
 {
-    border:1px solid black;
-    flex-grow:1;
+    overflow: hidden;
+    align-items: center;
+    justify-content:center;
+    display:flex;
+    width: 100%;
+    height: 100%;
+    flex:0;
+    transition: flex 2s linear;
+}
+li.current{
+    flex:1;
+}
+li[data-index="1"]{
+    background-color: #ff66ff;
+}
+li[data-index="2"]{
+    background-color: #66ff66;
+}
+li[data-index="3"]{
+    background-color: #3399ff;
+}
+li[data-index="4"]{
+    background-color: #ff9966;
+}
+li[data-index="5"]{
+    background-color: #ff3300;
 }

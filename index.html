@@ -1,17 +1,38 @@
 <html>
+
 <head>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-<div class="carousel">
-    <ul>
-        <li>1</li>
-        <li>2</li>
-        <li>3</li>
-        <li>4</li>
-        <li>5</li>
-    </ul>
-    <span><</span>
-    <span>></span>
-</div>
-</body>        
+    <div class="carousel" id=carousel>
+        <ul>
+            <li class="current" data-index=1>1</li>
+            <li data-index=2>2</li>
+            <li data-index=3>3</li>
+            <li data-index=4>4</li>
+            <li data-index=5>5</li>
+        </ul>
+    </div>
+    <script>
+        var carousel = document.getElementById('carousel');
+        carousel.addEventListener('click', function (ev) {
+            var current = document.getElementsByClassName('current')[0];
+            current.classList.remove('current');
+            if (current.nextElementSibling) 
+                current.nextElementSibling.classList.add('current');
+            else {
+                var lis = current.parentElement.children;
+                var lis0 = lis[0];
+                lis0.parentElement.appendChild(lis0);
+                setTimeout(function () {
+                    lis0.classList.add('current');
+                }, 10)
+
+            }
+        })
+
+    </script>
+</body>
+
+</html>
