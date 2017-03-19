@@ -85,4 +85,4 @@ li:nth-child(5){
 }
 ```
 
-A link to our Carousel example running on github pages: [HTML & CSS Carousel](https://alejandromdz.github.io/html_css_carroussel/)
+A link to our Carousel example running on github pages: [HTML & CSS Carousel](https://alejandromdz.github.io/html_css_carroussel)
