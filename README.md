@@ -23,9 +23,9 @@ Then we need to style our carousel container, we use the id selector since we no
 {
     height:200px;
     width:200px;
-    overflow: hidden;
+    overflow:hidden;
     position:relative;
-    margin:auto;
+    margin:0 auto;
 }
 ```
 
