@@ -3,6 +3,7 @@
 This example is a lightweight implementation of a Slide Carousel, using HTML and CSS only, Why is this important? Carousels are one of the most popular ways of showing self-contained information, there are several implementations such as [jCarousel](http://sorgalla.com/jcarousel/) or [Bootstrap's Carousel](https://getbootstrap.com/examples/carousel/), but sometimes loading a complete library for adding a simple feature like this may be an overkill.
 
 Here is the basic structure of a carousel, although the `<ul>` tag is normally used to list text I will use it for structure purposes only, which means that the `<li>` elements will be containers for anchors, images or anything we need to display.
+
 ``` html
 <div id="carousel">
         <ul>
@@ -44,7 +45,7 @@ Now for the `<ul>` element we will remove bullets using `list-style-type:none;` 
 }
 ```
 
-Finally we set the animation called slide to this element, and here is where the magic happens. The slide animation will move our elements list with a step of 200px, which is the elements width. Our first position will be `left:0px;` and because we are using absolute position refered to the container (Yes, I know absolute means free of references...) it will start showing our first element, in the next interval we will move our list 200px left, showing our second element, the process continues up to our fifth element wich is shown with `left:-800px; ` at this point our work is done (Leonard Nimoy disappearing in the background) and to restart our animation without moving abruptly to the start we inserted a sixth element, which is a copy of our first element and is shown with `left:-1000px`, then we move instantly to our first position and repeat the process (this is done with `animation-direction:normal;` but we omit it since it is the default value). A cubic-bezier timing function is used to ease the transition and we set a 25 seconds period to the entire animation. 
+Finally we set the animation called slide to this element, and here is where the magic happens. The slide animation will move our elements list with a step of 200px, which is the elements width. Our first position will be `left:0px;` and because we are using absolute position refered to the container (Yes, I know absolute means free of references...) it will start showing our first element, in the next interval we will move our list 200px left, showing our second element, the process continues up to our fifth element wich is shown with `left:-800px; ` at this point our work is done (Leonard Nimoy disappearing in the background) and to restart our animation without moving abruptly to the start we inserted a sixth element, which is a copy of our first element, it is shown with `left:-1000px`, then we move instantly to our first position and repeat the process (this is done with `animation-direction:normal;` but we omit it since it is the default value). A cubic-bezier timing function is used to ease the transition and we set a 25 seconds period to the entire animation. 
 
 ```css
 @keyframes slide{
