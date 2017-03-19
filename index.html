@@ -1,29 +1,20 @@
 <!doctype html>
 <html>
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.2.2/web-animations-next-lite.min.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <div id="carousel">
         <ul>
-            <li data-index=1>1</li>
-            <li data-index=2>2</li>
-            <li data-index=3>3</li>
-            <li data-index=4>4</li>
-            <li data-index=5>5</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>1</li> <!-- repeated element -->
         </ul>
     </div>
-    <script>
-        setInterval( function() {
-            var ul=document.querySelector('#carousel ul');
-            ul.animate([{ left: '0px' }, { left: '-200px' }],
-                {duration: 1000,easing: 'ease',fill: 'forwards'})
-            var lis = document.querySelectorAll('#carousel ul li')
-            lis[0].parentElement.appendChild(lis[0]);
-        },5000);
-    </script>
 </body>
 
 </html>

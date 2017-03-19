@@ -4,7 +4,7 @@
     width:200px;
     overflow: hidden;
     position:relative;
-    margin:auto;
+    margin: 0 auto;
 }
 #carousel ul
 {
@@ -14,30 +14,38 @@
     padding:0px;
     margin:0px;
     position: absolute; 
-    left:-200px;
+    animation: slide 25s cubic-bezier(0.05, 0.9, 0, 1) infinite;
 }
 #carousel li
 {
     display:flex;
-    overflow: hidden;
     align-items: center;
     justify-content:center;
     width:200px;
     height: 200px;
 }
 
-li[data-index="1"]{
+li:nth-child(1),li:nth-child(6){
     background-color: #ff66ff;
 }
-li[data-index="2"]{
+li:nth-child(2){
     background-color: #66ff66;
 }
-li[data-index="3"]{
+li:nth-child(3){
     background-color: #3399ff;
 }
-li[data-index="4"]{
+li:nth-child(4){
     background-color: #ff9966;
 }
-li[data-index="5"]{
+li:nth-child(5){
     background-color: #ff3300;
+}
+
+@keyframes slide{
+    0%{left:0px;}
+    20%{left:-200px;}
+    40%{left:-400px;}
+    60%{left:-600px}
+    80%{left:-800px}
+    100%{left:-1000px}
 }
